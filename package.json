@@ -1,6 +1,6 @@
 {
   "name": "@fathym-deno/lcu-deno-fresh-on-azure",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "@fathym-deno/lcu-deno-fresh-on-azure",
   "author": "Fathym, Inc",
   "main": "lcu.json",
