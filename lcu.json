@@ -1,17 +1,17 @@
 {
   "Package": {
-    "Name": "@fathym-deno/lcu-deno-fresh-on-azure",
-    "Description": "An LCU for installing @fathym-deno/lcu-deno-fresh-on-azure.",
+    "Name": "Deno Fresh - Azure App Service Deploy",
+    "Description": "An LCU for establishing a Deno Fresh app that will be automatically deployed to azure.",
     "Image": "https://www.fathym.com/assets/images/logo.png",
     "PreviewImage": "https://www.fathym.com/assets/images/logo.png"
   },
   "Configurations": {
-    "Basic": {
-      "Name": "Basic NPM Package Deploy",
-      "Description": "A simple NPM package deployment.",
+    "Fresh": {
+      "Name": "Deno Fresh - Azure Deploy Automation",
+      "Description": "Build configuraiton for creating a Deno Fresh app (if it doesn't exist), and configuring deployment/hosting automation.",
       "Phases": [
         {
-          "Name": "Deploy NPM Package",
+          "Name": "Deno Fresh Deploy",
           "Order": 1,
           "Asset": "deploy"
         }

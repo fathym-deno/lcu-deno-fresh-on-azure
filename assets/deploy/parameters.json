@@ -11,27 +11,52 @@
       }
     ]
   },
-  "NPM_PACKAGE": {
+  "ORGANIZATION": {
     "Order": 2,
     "Prompts": [
       {
-        "Message": "Enter the NPM package name:"
+        "Type": "git:organizations|select",
+        "Message": "Which organization would you like to import code into?"
       }
     ]
   },
-  "PACKAGE_VERSION": {
-    "Order": 2,
+  "APP_NAME": {
+    "Order": 3,
     "Prompts": [
       {
-        "Message": "Enter the NPM package version to use:"
+        "Message": "Enter the name of the ACR image to deploy (use_this_format):"
       }
     ]
   },
-  "PACKAGE_ROUTE": {
-    "Order": 2,
+  "WEBSITE_NAME": {
+    "Order": 4,
     "Prompts": [
       {
-        "Message": "Enter the route to run the package on:"
+        "Message": "Enter the name of Azure App service to create (use-this-format):"
+      }
+    ]
+  },
+  "ACR_REGISTRY": {
+    "Order": 5,
+    "Prompts": [
+      {
+        "Message": "Enter the Azure Container Registry URL:"
+      }
+    ]
+  },
+  "ACR_USERNAME": {
+    "Order": 6,
+    "Prompts": [
+      {
+        "Message": "Enter the Azure Container Registry username:"
+      }
+    ]
+  },
+  "ACR_PASSWORD": {
+    "Order": 7,
+    "Prompts": [
+      {
+        "Message": "Enter the Azure Container Registry password:"
       }
     ]
   }

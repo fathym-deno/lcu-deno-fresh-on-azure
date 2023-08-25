@@ -2,33 +2,110 @@
   "Applications": {
     "{{$1}}": {
       "Details": {
-        "Description": "An application for hosting the files from the NPM package '{{NPM_PACKAGE}}'",
-        "Name": "NPM Package Deploy: {{NPM_PACKAGE}}"
+        "Description": "Deno Fresh Starter",
+        "Name": "Deno Fresh Starter"
       },
       "LookupConfig": {
-        "PathRegex": "/{{PACKAGE_ROUTE}}.*"
+        "PathRegex": "/.*"
       },
       "Package": {
         "Details": {
-          "Package": "{{NPM_PACKAGE}}",
-          "Version": "{{PACKAGE_VERSION}}"
+          "SPARoot": "{{WEBSITE_NAME}}.azurewebsites.net"
         },
-        "Type": "NPMLowCodeUnit"
+        "Type": "SPALowCodeUnit"
       },
       "Processor": {
         "Details": {
-          "BaseHref": "/{{PACKAGE_ROUTE}}/",
-          "DefaultFile": "index.html"
+          "InboundPath": "/"
         },
-        "Type": "DFSProcessor"
+        "Type": "ProxyProcessor"
+      }
+    }
+  },
+  "DataTokens": {
+    "acr-registry": {
+      "Details": {
+        "Value": "{{ACR_REGISTRY}}"
+      }
+    },
+    "acr-username": {
+      "Details": {
+        "Value": "{{ACR_USERNAME}}"
+      }
+    },
+    "acr-password": {
+      "Details": {
+        "Value": "{{ACR_PASSWORD}}"
+      }
+    }
+  },
+  "{{EaC.PrimaryEnvironment}}": {
+    "Artifacts": {
+      "deno-build": {
+        "Type": "GitHubArtifact",
+        "Details": {
+          "Name": "Deno Build/Release",
+          "Output": "./",
+          "BuildCommand": "",
+          "InstallCommand": "",
+          "NPMRegistry": "https://registry.npmjs.org/"
+        }
+      }
+    },
+    "DevOpsActions": {
+      "github-artifacts-release-deno": {
+        "ArtifactLookups": ["deno-build"],
+        "Details": {
+          "Name": "GitHub Artifacts - Release - Deno",
+          "Path": "lcu-github-artifacts-release.yml",
+          "Templates": [
+            "https://raw.githubusercontent.com/lowcodeunit/infrastructure/master/github/actions/deno-artifacts/_header.hbs.yml",
+            "https://raw.githubusercontent.com/lowcodeunit/infrastructure/master/github/actions/deno-artifacts/release-flow.yml"
+          ]
+        },
+        "SecretLookups": ["acr-registry", "acr-username", "acr-password"]
+      }
+    },
+    "Secrets": {
+      "acr-registry": {
+        "Details": {
+          "Name": "ACR Registry",
+          "DataTokenLookup": "acr-registry",
+          "KnownAs": "ACR_REGISTRY"
+        }
+      },
+      "acr-username": {
+        "Details": {
+          "Name": "ACR Username",
+          "DataTokenLookup": "acr-username",
+          "KnownAs": "ACR_USERNAME"
+        }
+      },
+      "acr-password": {
+        "Details": {
+          "Name": "ACR Password",
+          "DataTokenLookup": "acr-password",
+          "KnownAs": "ACR_PASSWORD"
+        }
+      }
+    },
+    "Sources": {
+      "import|github://fathym-deno/deno-fresh-starter": {
+        "DevOpsActionTriggerLookups": ["github-artifacts-release-deno"],
+        "Details": {
+          "Branches": ["main"],
+          "MainBranch": "main",
+          "Organization": "{{ORGANIZATION}}",
+          "Repository": "deno-fresh-starter",
+          "Name": "github://{{ORGANIZATION}}/deno-fresh-starter"
+        },
+        "Type": "GitHubSourceControl"
       }
     }
   },
   "Projects": {
     "{{PROJECT_LOOKUP}}": {
-      "ApplicationLookups": [
-        "{{$1}}"
-      ],
+      "ApplicationLookups": ["{{$1}}"],
       "Details": {
         "Name": "{{Package.Details.Name}}",
         "Description": "{{Package.Details.Description}}"
