@@ -35,13 +35,5 @@
         "Message": "Enter the name of Azure App service to create (use-this-format):"
       }
     ]
-  },
-  "ACR_PASSWORD": {
-    "Order": 7,
-    "Prompts": [
-      {
-        "Message": "Enter the Azure Container Registry password:"
-      }
-    ]
   }
 }
