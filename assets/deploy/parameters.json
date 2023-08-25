@@ -36,14 +36,6 @@
       }
     ]
   },
-  "ACR_USERNAME": {
-    "Order": 6,
-    "Prompts": [
-      {
-        "Message": "Enter the Azure Container Registry username:"
-      }
-    ]
-  },
   "ACR_PASSWORD": {
     "Order": 7,
     "Prompts": [

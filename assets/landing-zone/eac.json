@@ -16,7 +16,9 @@
                 "RESOURCE_NAME": "{{RESOURCE_NAME}}"
               },
               "Outputs": {
-                "acrRegistry": "ACR_REGISTRY"
+                "acrPassword": "ACR_PASSWORD",
+                "acrRegistry": "ACR_REGISTRY",
+                "acrUsername": "ACR_USERNAME"
               }
             }
           }
