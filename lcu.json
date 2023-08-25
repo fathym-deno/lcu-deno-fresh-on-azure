@@ -6,7 +6,7 @@
     "PreviewImage": "https://www.fathym.com/assets/images/logo.png"
   },
   "Configurations": {
-    "Fresh": {
+    "fresh": {
       "Name": "Deno Fresh - Azure Deploy Automation",
       "Description": "Build configuraiton for creating a Deno Fresh app (if it doesn't exist), and configuring deployment/hosting automation.",
       "Phases": [
