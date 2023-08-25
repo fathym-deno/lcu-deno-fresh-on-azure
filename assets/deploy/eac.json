@@ -59,8 +59,8 @@
           "Name": "GitHub Artifacts - Release - Deno",
           "Path": "lcu-github-artifacts-release.yml",
           "Templates": [
-            "https://raw.githubusercontent.com/lowcodeunit/infrastructure/master/github/actions/deno-artifacts/_header.hbs.yml",
-            "https://raw.githubusercontent.com/lowcodeunit/infrastructure/master/github/actions/deno-artifacts/release-flow.yml"
+            "https://raw.githubusercontent.com/lowcodeunit/infrastructure/master/github/actions/deno-fresh/_header.hbs.yml",
+            "https://raw.githubusercontent.com/lowcodeunit/infrastructure/master/github/actions/deno-fresh/release-flow.yml"
           ]
         },
         "SecretLookups": ["acr-registry", "acr-username", "acr-password"]
