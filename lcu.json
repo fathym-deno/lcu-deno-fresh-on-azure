@@ -11,8 +11,13 @@
       "Description": "Build configuraiton for creating a Deno Fresh app (if it doesn't exist), and configuring deployment/hosting automation.",
       "Phases": [
         {
-          "Name": "Deno Fresh Deploy",
+          "Name": "Landing Zone",
           "Order": 1,
+          "Asset": "landing-zone"
+        },
+        {
+          "Name": "Deno Fresh Deploy",
+          "Order": 2,
           "Asset": "deploy"
         }
       ]

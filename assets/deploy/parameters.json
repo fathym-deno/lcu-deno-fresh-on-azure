@@ -36,14 +36,6 @@
       }
     ]
   },
-  "ACR_REGISTRY": {
-    "Order": 5,
-    "Prompts": [
-      {
-        "Message": "Enter the Azure Container Registry URL:"
-      }
-    ]
-  },
   "ACR_USERNAME": {
     "Order": 6,
     "Prompts": [

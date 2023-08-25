@@ -1,0 +1,20 @@
+{
+  "AZURE_CLOUD_LOOKUP": {
+    "Order": 3,
+    "Prompts": [
+      {
+        "Type": "eac:env:clouds|select",
+        "Message": "Enter a name for your alfresco cloud resources"
+      }
+    ]
+  },
+  "RESOURCE_NAME": {
+    "Order": 4,
+    "Prompts": [
+      {
+        "Type": "input",
+        "Message": "Enter a name for your alfresco resources"
+      }
+    ]
+  }
+}
