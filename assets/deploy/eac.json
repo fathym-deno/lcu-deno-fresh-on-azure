@@ -66,7 +66,7 @@
               },
               "Data": {
                 "RESOURCE_NAME": "{{RESOURCE_NAME}}",
-                "SUBSCRIPTION_ID": "{{EaC.Environments[EaC.PrimaryEnvironment].Clouds[AZURE_CLOUD_LOOKUP].Details.SubscriptionID}}",
+                "SUBSCRIPTION_ID": "{{#with (lookup (lookup (lookup EaC.Environments EaC.PrimaryEnvironment) Clouds) AZURE_CLOUD_LOOKUP)}}{{Details.SubscriptionID}}{{/with}}",
                 "ACR_REGISTRY": "{{ACR_REGISTRY}}",
                 "ACR_USERNAME": "{{ACR_USERNAME}}",
                 "ACR_PASSWORD": "{{ACR_PASSWORD}}"
